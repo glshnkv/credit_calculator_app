@@ -53,6 +53,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OnboardingScreen(),
       );
     },
+    PaymentHistoryRoute.name: (routeData) {
+      final args = routeData.argsAs<PaymentHistoryRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: PaymentHistoryScreen(
+          key: args.key,
+          list: args.list,
+        ),
+      );
+    },
     SettingsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -67,7 +77,7 @@ abstract class _$AppRouter extends RootStackRouter {
 class AddPaymentRoute extends PageRouteInfo<AddPaymentRouteArgs> {
   AddPaymentRoute({
     Key? key,
-    required dynamic creditModel,
+    required CreditModel creditModel,
     List<PageRouteInfo>? children,
   }) : super(
           AddPaymentRoute.name,
@@ -92,7 +102,7 @@ class AddPaymentRouteArgs {
 
   final Key? key;
 
-  final dynamic creditModel;
+  final CreditModel creditModel;
 
   @override
   String toString() {
@@ -178,6 +188,44 @@ class OnboardingRoute extends PageRouteInfo<void> {
   static const String name = 'OnboardingRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PaymentHistoryScreen]
+class PaymentHistoryRoute extends PageRouteInfo<PaymentHistoryRouteArgs> {
+  PaymentHistoryRoute({
+    Key? key,
+    required List<PaymentModel> list,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PaymentHistoryRoute.name,
+          args: PaymentHistoryRouteArgs(
+            key: key,
+            list: list,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'PaymentHistoryRoute';
+
+  static const PageInfo<PaymentHistoryRouteArgs> page =
+      PageInfo<PaymentHistoryRouteArgs>(name);
+}
+
+class PaymentHistoryRouteArgs {
+  const PaymentHistoryRouteArgs({
+    this.key,
+    required this.list,
+  });
+
+  final Key? key;
+
+  final List<PaymentModel> list;
+
+  @override
+  String toString() {
+    return 'PaymentHistoryRouteArgs{key: $key, list: $list}';
+  }
 }
 
 /// generated route for

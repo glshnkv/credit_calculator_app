@@ -1,3 +1,6 @@
+import 'package:credit_calculator_app/models/payment_model.dart';
+import 'package:uuid/uuid.dart';
+
 enum CreditType {
   vehcle,
   personal,
@@ -5,11 +8,13 @@ enum CreditType {
 }
 
 class CreditModel {
+  final int id;
   final int creditAmount;
   final int interestRate;
   final int creditPeriod;
   String date;
-  final int paid;
+  int paid;
+  List<PaymentModel> paymentsHistory;
 
   final int totalPayments;
   final int monthlyPayment;
@@ -17,7 +22,7 @@ class CreditModel {
   final int overpayment;
 
   CreditModel(
-      {
+      {required this.id,
       required this.paid,
       required this.creditAmount,
       required this.interestRate,
@@ -26,5 +31,6 @@ class CreditModel {
       required this.totalPayments,
       required this.monthlyPayment,
       required this.fullCost,
-      required this.overpayment});
+      required this.overpayment,
+        required this.paymentsHistory});
 }

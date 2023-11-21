@@ -16,40 +16,74 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(title: 'Settings'),
+      appBar: AppBarWidget(
+        title: 'Settings',
+        onTap: () {
+          context.router.pop();
+        },
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
           children: [
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             ListTile(
-              leading: SvgPicture.asset('assets/images/icons/notification-bing.svg'),
-              title: Text('Set reminders', style: const TextStyle(
-                  color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w400),),
+              leading:
+                  SvgPicture.asset('assets/images/icons/notification-bing.svg'),
+              title: Text(
+                'Set reminders',
+                style: const TextStyle(
+                    color: AppColors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
+              ),
               onTap: () {},
             ),
             ListTile(
-              leading: SvgPicture.asset('assets/images/icons/security-safe.svg'),
-              title: Text('Privacy Policy', style: const TextStyle(
-                  color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w400),),
+              leading:
+                  SvgPicture.asset('assets/images/icons/security-safe.svg'),
+              title: Text(
+                'Privacy Policy',
+                style: const TextStyle(
+                    color: AppColors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
+              ),
               onTap: () {},
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/icons/document.svg'),
-              title: Text('Terms of Use', style: const TextStyle(
-                  color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w400),),
+              title: Text(
+                'Terms of Use',
+                style: const TextStyle(
+                    color: AppColors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
+              ),
               onTap: () {},
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/icons/ticket.svg'),
-              title: Text('Subscription Information', style: const TextStyle(
-                  color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w400),),
+              title: Text(
+                'Subscription Information',
+                style: const TextStyle(
+                    color: AppColors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
+              ),
               onTap: () {},
             ),
             ListTile(
               leading: SvgPicture.asset('assets/images/icons/star.svg'),
-              title: Text('Rate our app in the AppStore', style: const TextStyle(
-                  color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w400),),
+              title: Text(
+                'Rate our app in the AppStore',
+                style: const TextStyle(
+                    color: AppColors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
+              ),
               onTap: () {},
             ),
           ],

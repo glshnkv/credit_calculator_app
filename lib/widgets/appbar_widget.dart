@@ -6,8 +6,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final Size preferredSize;
   final String title;
+  final void Function()? onTap;
 
-  const AppBarWidget({super.key, required this.title})
+
+  const AppBarWidget({super.key, required this.title, required this.onTap})
       : preferredSize = const Size.fromHeight(58.0);
 
   @override
@@ -18,9 +20,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           Icons.arrow_back,
           color: AppColors.grey,
         ),
-        onTap: () {
-          context.router.pop();
-        },
+        onTap: onTap,
       ),
 
       title: Text(
